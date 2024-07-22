@@ -26,8 +26,6 @@ df['Construction_Type'] = df['Construction_Type'].fillna('Other')
 df['Construction_Type'] = df['Construction_Type'].str.title()
 # replace not avaiable with इतर .
 df['Use_Type'] = df['Use_Type'].replace('Not-Available', 'इतर')
-# DOWNLOAD CLEAN FILE
-df.to_excel('Master_data.xlsx', index=False)
 
 # Import paid amount file
 pa = pd.read_excel('Downloads/Master_Data Demo.xlsx', sheet_name='Paid Amount')
@@ -43,9 +41,9 @@ df.rename(columns={
 df = df.drop_duplicates()
 df
 
-
-
-
+# DOWNLOAD CLEAN FILE
+df.to_excel('Master_data.xlsx', index=False)
+df.to_excel('Paid_Amount.xlsx', index=False)
 
 
 ## Maain Page 
